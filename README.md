@@ -22,3 +22,5 @@ The CSS files have specified that the maximum size of the map displayed should r
 
 Call to action:
 I would like all hawker food enjoyers as well as families that enjoy going out on weekends to explore their next market right here on this app, with its simple and concise ability to sort by different market types to suit their needs.
+
+I programmed this on Visual Studio Code and ran the program using the live server plug in, the link to the server is http://127.0.0.1:5500/index.html
