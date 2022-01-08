@@ -2,35 +2,137 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
     <link
       rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-      crossorigin=""
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
-    <button id="toggle-btn1">Toggle All Markets</button>
-    <button id="toggle-btn2">Toggle Food Markets</button>
-    <button id="toggle-btn3">Toggle Marketing Markets</button>
-    <div id="singapore-map"></div>
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="map.html">Map</a>
+      </li>
+    </ul>
+    <header class="header">
+      <h1>MarketMap</h1>
+      <p class="subtitle">Markets in Singapore</p>
+      <br />
+      <p>Find out where you can eat and shop at with one click!</p>
+      <a href="about.html" class="btn btn-primary">About Us</a>
+    </header>
+    <section class="p-5 grey-container d-flex flex-row">
+      <div>
+        <h2>Find markets near you</h2>
+        <p>
+          They are sorted into All Markets, Food markets and Marketing markets.
+        </p>
+        <ul class="points">
+          <li>
+            All markets refer to all the market locations provided in the
+            GEOJson files from the gov.api website
+          </li>
+          <li>
+            Food markets refer to all the markets that have 0 market produce in
+            them and solely comprise of food stalls
+          </li>
+          <li>
+            Marketing markets refer to all markets that have both market produce
+            and food stalls
+          </li>
+        </ul>
+      </div>
+      <img src="images/shop.svg" alt="" class="img-shop" />
+    </section>
+    <section class="container p-5">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="icon">
+                <span class="material-icons"> thumb_up </span>
+              </div>
+              <h5 class="card-title">Easy to navigate</h5>
+              <p class="card-text">
+                Our user interface is simple and intuitive, allowing for easy
+                access without much hassle
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="icon">
+                <span class="material-icons"> bolt </span>
+              </div>
+              <h5 class="card-title">Efficient</h5>
+              <p class="card-text">
+                Data is loaded efficiently, providing a seamless user experience
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="icon">
+                <span class="material-icons"> adjust </span>
+              </div>
+              <h5 class="card-title">Accurate</h5>
+              <p class="card-text">
+                The results reflect the food and general markets in Singapore
+                accurately according to online data
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container footer-top">
+        <div class="row">
+          <div class="col-lg-8">
+            <h4>MarketMap</h4>
+            <p>Find out where you can eat and shop at with one click!</p>
+          </div>
+          <div class="col-lg-4">
+            <ul class="footer-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="map.html">Map</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">All Rights Reserved. Copyright &copy; 2021</div>
+    </footer>
     <script
-      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-      crossorigin=""
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.css" />
-    <script src="https://unpkg.com/leaflet-search@2.3.7/dist/leaflet-search.src.js"></script>
-
-    <script src="index.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
